@@ -19,6 +19,9 @@ Each intern must complete this project independently and submit their own PR.
 ### Project goal
 Build a lightweight program manager question router that could later evolve into a Discord helper for founder questions and program logistics.
 
+### Important note
+This repository includes scaffold code and starter data only. You are expected to implement the required features yourself.
+
 ### Required features
 - Accept a question as input
 - Route the question to a matching topic using simple logic
@@ -37,7 +40,7 @@ Build a lightweight program manager question router that could later evolve into
 - Add more question synonyms
 - Improve response quality
 - Add simple logging for unknown questions
-- Add command-style support like `/weekly-report`
+- Add command-style support
 - Add another topic related to founders or residents
 
 ## Git and PR expectations
@@ -103,9 +106,10 @@ npm start
 
 ## Starter structure
 
-- `src/data/faqs.json` contains starter responses
-- `src/router.js` contains basic routing logic
-- `src/index.js` runs a small command-line demo
+- `faqs.json` contains starter responses
+- `router-starter.js` is the scaffold router you will implement
+- `index-starter.js` is the starter command-line entrypoint
+- `package.json` points `npm start` to the scaffold entrypoint
 
 ## Working agreement
 
