@@ -1,4 +1,4 @@
-import faqs from './faqs.json' assert { type: 'json' };
+import faqs from './faqs.json' with { type: 'json' };
 import fs from 'node:fs';
 export function routeQuestion(question) {
   const q = question.toLowerCase();
