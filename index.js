@@ -1,6 +1,8 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import { routeQuestion } from './router.js';
 
+require('dotenv').config();
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
