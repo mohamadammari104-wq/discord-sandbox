@@ -4,5 +4,5 @@
   "office_hours": "Check the current program schedule or ask program leadership for the latest office hours and support blocks.",
   "housing": "Housing-related questions should be directed to the Detroit Hacker House Director or designated house support contact.",
   "contact": "For general program support, contact program leadership in Discord or through the channel shared during onboarding.",
-  "fallback": "I am not sure yet. Please ask program staff directly and note this question so the router can be improved."
+  "fallback": "I’m not sure about that yet. Try asking about weekly reports, deliverables, office hours, housing, or contact."
 }
