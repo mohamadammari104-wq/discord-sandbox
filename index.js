@@ -1,27 +1,26 @@
-import readline from 'node:readline';
+import { Client, GatewayIntentBits } from 'discord.js';
 import { routeQuestion } from './router.js';
 
-console.log('Program Manager Router');
-console.log('Type a question and press enter. Type "exit" to quit.');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: '> '
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
+  ]
 });
 
-rl.prompt();
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}`);
+});
 
-rl.on('line', (line) => {
-  const question = line.trim();
+client.on('messageCreate', (message) => {
+  if (message.author.bot) return;
 
-  if (question.toLowerCase() === 'exit') {
-    rl.close();
-    return;
+  const result = routeQuestion(message.content);
+
+  if (result) {
+    message.reply(result.response);
   }
-
-  const result = routeQuestion(question);
-  console.log(`\nTopic: ${result.topic}`);
-  console.log(`Response: ${result.response}\n`);
-  rl.prompt();
 });
+
+client.login(process.env.DISCORD_TOKEN);
