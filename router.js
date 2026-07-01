@@ -1,4 +1,4 @@
-import faqs from './faqs.json' assert { type: 'json' };
+import faqs from './faqs.json' with { type: 'json' };
 
 const topicMatchers = {
   weekly_report: ['weekly report', '/weekly-report', 'report due'],
